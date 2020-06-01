@@ -16,7 +16,8 @@ class App extends React.Component {
 
     handleChange(event){
       this.setState({
-        list:event.target.value
+        list:event.target.value,
+        errorMessage:""
       });
     }
     handleSubmit(event){
@@ -29,10 +30,14 @@ class App extends React.Component {
       var newList=this.state.list;
     if(newList.length<3||newList.length>200){
         console.log("if works");
+        //alert("Length mismatch");
+
         this.setState({
-            //list:"length mismatch",
-            inputClass:"banana"
+            errorMessage:"length mismatch",
+            inputClass:"banana",
+
     })
+
     }else{
         var newList=this.state.completeList;
         newList.push(this.state.list);
@@ -52,6 +57,7 @@ class App extends React.Component {
           <div className="item">
             <button onClick={(event)=>{this.handleSubmit()}}>Add to list</button>
             <ul>{completeList}</ul>
+            <p>{this.state.errorMessage}</p>
             <input className={this.state.inputClass}  onChange={(event)=>{this.handleChange(event); }} value ={this.state.list}/>
 
           </div>
