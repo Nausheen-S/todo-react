@@ -33,7 +33,39 @@ class App extends React.Component {
             //this.setState({list:""});
         }
     }
-    /*handleChange(event){
+
+render() {
+        console.log("rendering");
+
+        var completeList = this.state.completeList.map(completeList=>{
+            return(<li>{completeList}</li>)
+        })
+         const addNewItem = list =>{
+         this.setNewList(list);
+         }
+         const deleteItemList = index =>{
+         this.setDeleteItem(index);
+        }
+        return (
+          <div className="item">
+
+            <ul>{completeList} setDeleteItem={deleteItemList}</ul>
+            <p>{this.state.errorMessage}</p>
+           <Form setNewList={addNewItem}>
+         </Form>
+
+          </div>
+        );
+    }
+}
+
+
+
+export default hot(module)(App);
+
+
+
+/*handleChange(event){
       this.setState({
         list:event.target.value,
         errorMessage:""
@@ -84,30 +116,3 @@ class App extends React.Component {
     }
 
 }*/
-render() {
-        console.log("rendering");
-
-        var completeList = this.state.completeList.map(completeList=>{
-            return(<li>{completeList}</li>)
-        })
-         const addNewItem = list =>{
-         this.setNewList(list);
-         }
-         const deleteItemList = index =>{
-         this.setDeleteItem(index);
-        }
-        return (
-          <div className="item">
-
-            <ul>{completeList} setDeleteItem={deleteItemList}</ul>
-            <p>{this.state.errorMessage}</p>
-           <Form setNewList={addNewItem}>
-         </Form>
-
-          </div>
-        );
-}
-
-
-
-export default hot(module)(App);

@@ -20,7 +20,8 @@ import React from 'react';
 
                  {displayList}
 
-             }
+             )
+     }
          }
 
  export default ItemList;

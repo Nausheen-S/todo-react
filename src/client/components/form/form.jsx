@@ -9,8 +9,8 @@ class Form extends React.Component {
         }
     }
 
-}
-    handleChange(cuurentValue){
+
+    handleChange(currentValue){
       this.setState({
         list:currentValue
         //errorMessage:""
@@ -38,6 +38,7 @@ class Form extends React.Component {
       //event.preventDefault();
     }
     }*/
+}
 
     render() {
         console.log("rendering");
